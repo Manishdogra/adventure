@@ -1,0 +1,46 @@
+	<% include partials/header %>
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>🏕 Welcome To Camping area ! </h1>
+			<p>view our handpicked campgrounds from all over the India</p>
+			<p>
+				<a class="btn btn-primary btn-lg" href="/campgrounds/new">Add new campground</a>
+			</p>
+		</div>
+	</header>
+	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+			<!-- <% campgrounds.forEach(function(campground){ %>
+
+				<div class="col-md-3" col-sm-6>
+					<div class="thumbnail">
+							<img src="<%= campground.image %>" width="300" height="200">
+							<div class="caption">
+									<h4 class="text-success"><%=	campground.name%></h4>
+							</div>
+					</div>
+				
+					
+				</div>
+			
+				<% }); %>	 -->
+				<% campgrounds.forEach(function(campground){ %>
+					<div class="card" style="width: 18rem;">
+						<img src="<%= campground.image %>" class="card-img-top" alt="...">
+						<div class="card-body">
+						  <h5 class="card-title"><%=campground.name%></h5>
+						   <h3>Price -<%=campground.price%> </h3>
+						  <p class="card-text"><%= campground.description%></p>
+							<p>
+						  <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+						  </p>
+						</div>
+					  </div>
+					  <% }); %>	
+			
+		
+	</div>
+	
+	
+	<% include partials/footer %>
+</div>
